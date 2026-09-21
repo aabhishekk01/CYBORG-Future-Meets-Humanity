@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBORG // Future Meets Humanity</title>
+  <meta name="description" content="A futuristic cyborg-themed experience blending cutting-edge technology with human consciousness. Explore advanced neural interfaces, bionic augmentations, and quantum bionics.">
+
+  <!-- Google Fonts: Orbitron, Exo 2, Share Tech Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-body">
+
+  <!-- Interactive Canvas Background for Circuit Lines & Cyber Particles -->
+  <canvas id="circuit-canvas" class="circuit-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Holographic Glow & Scanlines Layer -->
+  <div class="hologram-scanlines" aria-hidden="true"></div>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="cyber-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Cyborg Home">
+        <div class="logo-symbol">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="currentColor" stroke-width="2" fill="rgba(0, 240, 255, 0.08)"/>
+            <circle cx="20" cy="20" r="6" fill="#00f0ff" class="logo-core-pulse"/>
+            <path d="M20 2V14M20 26V38M2 12L12 18M28 22L38 28M2 28L12 22M28 18L38 12" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">CYBORG</span>
+          <span class="logo-sub">2088 // SYS_VER_4.9</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active"><span class="nav-num">01.</span>INIT</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-num">02.</span>ABOUT</a></li>
+          <li><a href="#features" class="nav-link"><span class="nav-num">03.</span>FEATURES</a></li>
+          <li><a href="#diagnostics" class="nav-link"><span class="nav-num">04.</span>MODULAR HUD</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-num">05.</span>NEURAL UPLINK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls: Audio SFX Toggle & Quick Action CTA -->
+      <div class="header-actions">
+        <button id="sfx-toggle" class="sfx-btn" aria-label="Toggle Sci-Fi Audio FX" title="Toggle Futuristic Audio FX">
+          <span class="sfx-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path class="sfx-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path class="sfx-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </span>
+          <span class="sfx-status">SFX: OFF</span>
+        </button>
+
+        <a href="#contact" class="btn-primary-mini" id="mini-uplink-btn">
+          <span>CONNECT</span>
+          <span class="btn-arrow">→</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Hero Text & CTA Content -->
+        <div class="hero-content">
+          <div class="sys-badge" data-reveal="fade-down">
+            <span class="beacon-dot"></span>
+            <span class="sys-text">NEURAL LINK // V4.9 // STATUS: SYNCHRONIZED</span>
+          </div>
+
+          <h1 class="hero-title" data-reveal="fade-up">
+            <span class="hero-title-sub">THE SYNTHESIS BEGINS</span>
+            <span class="hero-title-main text-gradient-silver">Future Meets</span>
+            <span class="hero-title-highlight text-glow-neon">Humanity</span>
+          </h1>
+
+          <p class="hero-description" data-reveal="fade-up" data-delay="150">
+            Transcending organic limitations through sovereign cybernetic engineering. 
+            We merge pure human intuition with quantum-grade synthetic power to forge 
+            the next paradigm of human evolution.
+          </p>
+
+          <!-- Primary CTA Button Group -->
+          <div class="hero-cta-group" data-reveal="fade-up" data-delay="300">
+            <a href="#features" class="btn-neon-cta" id="explore-cta">
+              <span class="btn-glow-layer"></span>
+              <span class="btn-content">
+                <span class="btn-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </span>
+                <span class="btn-text">EXPLORE NOW</span>
+                <span class="btn-reticle"></span>
+              </span>
+            </a>
+
+            <a href="#diagnostics" class="btn-metallic-secondary">
+              <span class="btn-border-sweep"></span>
+              <span class="secondary-content">
+                <span class="pulse-indicator"></span>
+                <span>INITIALIZE HUD</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Hero Real-Time Telemetry Bar -->
+          <div class="hero-telemetry" data-reveal="fade-up" data-delay="450">
+            <div class="telemetry-item">
+              <div class="telemetry-num text-glow-cyan" data-counter="0.12" data-suffix="ms">0.12ms</div>
+              <div class="telemetry-label">Synaptic Latency</div>
+            </div>
+            <div class="telemetry-divider"></div>
+            <div class="telemetry-item">
+              <div class="telemetry-num text-glow-cyan" data-counter="99.98" data-suffix="%">99.98%</div>
+              <div class="telemetry-label">Neural Cohesion</div>
+            </div>
+            <div class="telemetry-divider"></div>
+            <div class="telemetry-item">
+              <div class="telemetry-num text-glow-cyan" data-counter="12.4" data-suffix="x">12.4x</div>
+              <div class="telemetry-label">Muscular Torque</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Centerpiece Glowing Cyborg Figure & Holographic HUD -->
+        <div class="hero-visual" data-reveal="zoom-in" data-delay="200">
+          <div class="hologram-frame" id="hero-hologram">
+            
+            <!-- Rotating Hologram HUD Rings -->
+            <div class="hud-ring ring-outer" aria-hidden="true"></div>
+            <div class="hud-ring ring-mid" aria-hidden="true"></div>
+            <div class="hud-ring ring-inner" aria-hidden="true"></div>
+            <div class="hud-radar-sweep" aria-hidden="true"></div>
+
+            <!-- Target Reticle Brackets -->
+            <div class="reticle-bracket top-left"></div>
+            <div class="reticle-bracket top-right"></div>
+            <div class="reticle-bracket bottom-left"></div>
+            <div class="reticle-bracket bottom-right"></div>
+
+            <!-- Glowing Cyborg Image Container with 3D Tilt -->
+            <div class="cyborg-image-wrapper">
+              <div class="image-inner">
+                <img 
+                  src="assets/hero-cyborg3.jpg" 
+                  alt="Futuristic cyborg blending technology and humanity with glowing neon blue neural circuits and silver titanium skull plating"
+                  class="hero-cyborg-img"
+                  id="hero-cyborg-img"
+                  loading="eager"
+                />
+                <!-- Holographic Chromatic Sheen Overlay -->
+                <div class="image-holographic-sheen" aria-hidden="true"></div>
+                <!-- Circuit Wave Overlay -->
+                <div class="circuit-scan-beam" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <!-- Floating High-Tech Telemetry Widgets -->
+            <div class="hud-widget widget-top-right">
+              <div class="widget-header">
+                <span class="widget-dot"></span>
+                <span>BIOMETRIC SCAN</span>
+              </div>
+              <div class="widget-data">
+                <div class="data-row"><span>ORGANIC HR:</span> <strong class="text-glow-cyan">58 BPM</strong></div>
+                <div class="data-row"><span>SYNAPSE IO:</span> <strong>14.8 TB/s</strong></div>
+                <div class="data-bar"><div class="data-bar-fill" style="width: 88%;"></div></div>
+              </div>
+            </div>
+
+            <div class="hud-widget widget-bottom-left">
+              <div class="widget-header">
+                <span class="widget-dot green-dot"></span>
+                <span>CORE SHIELD</span>
+              </div>
+              <div class="widget-data">
+                <div class="data-row"><span>INTEGRITY:</span> <strong class="text-glow-cyan">100%</strong></div>
+                <div class="data-row"><span>THERMAL:</span> <strong>36.4°C</strong></div>
+              </div>
+            </div>
+
+            <!-- HUD Coordinate Tickers -->
+            <div class="hud-coords" aria-hidden="true">
+              <span>LAT 37°46'N // LNG 122°25'W</span>
+              <span>SYNCHRONY: OPTIMAL</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About Section">
+        <span class="scroll-text">SYSTEM INITIATION</span>
+        <div class="scroll-line">
+          <span class="scroll-dot"></span>
+        </div>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        
+        <div class="section-header" data-reveal="fade-up">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span> 02 // GENESIS <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">
+            The Human-Machine <span class="text-glow-neon">Synthesis</span>
+          </h2>
+          <p class="section-subtitle">
+            We reject the dichotomy between flesh and silicon. Our bionic architecture 
+            does not replace the human soul — it empowers consciousness with boundless 
+            computational majesty.
+          </p>
+        </div>
+
+        <!-- Duality Interactive Cards: Flesh vs Silicon Unified -->
+        <div class="duality-grid">
+          
+          <!-- Organic Consciousness Card -->
+          <div class="duality-card card-organic" data-reveal="fade-right" data-delay="100">
+            <div class="card-metallic-border"></div>
+            <div class="card-content">
+              <div class="card-badge">THE HUMAN ESSENCE</div>
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" stroke-width="1.75">
+                  <path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"></path>
+                  <path d="M12 17v4"></path>
+                  <path d="M8 21h8"></path>
+                  <circle cx="12" cy="7" r="1" fill="#00f0ff"></circle>
+                </svg>
+              </div>
+              <h3 class="card-heading">Organic Intuition</h3>
+              <p class="card-body">
+                Emotional intelligence, ethical judgment, creative divergent reasoning, 
+                and subjective awareness that cannot be synthesized by brute force algorithms.
+              </p>
+              <ul class="spec-list">
+                <li><span class="spec-check">✓</span> Qualitative Pattern Synthesis</li>
+                <li><span class="spec-check">✓</span> Empathic Neural Resonance</li>
+                <li><span class="spec-check">✓</span> Unbounded Imagination</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fusion Core Bridge -->
+          <div class="duality-bridge" data-reveal="zoom-in" data-delay="200">
+            <div class="fusion-orb">
+              <div class="orb-pulse"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                <path d="M16 3h5v5M4 20L21 3M8 21H3v-5M20 4l-7 7M3 21l7-7"></path>
+              </svg>
+              <span class="orb-label">QUANTUM BRIDGE</span>
+            </div>
+            <div class="bridge-stream"></div>
+          </div>
+
+          <!-- Cybernetic Augmentation Card -->
+          <div class="duality-card card-cyber" data-reveal="fade-left" data-delay="300">
+            <div class="card-metallic-border"></div>
+            <div class="card-content">
+              <div class="card-badge badge-cyber">SYNTHETIC APEX</div>
+              <div class="card-icon-wrap cyber-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="1.75">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="card-heading">Quantum Cybernetics</h3>
+              <p class="card-body">
+                Photonic telemetry, nanosteel kinetic reinforcement, sub-second 
+                predictive modeling, and impenetrable zero-knowledge cognitive firewalls.
+              </p>
+              <ul class="spec-list">
+                <li><span class="spec-check text-glow-cyan">✓</span> Zero-Degradation Memory Matrix</li>
+                <li><span class="spec-check text-glow-cyan">✓</span> 0.12ms Synaptic Response Rate</li>
+                <li><span class="spec-check text-glow-cyan">✓</span> Molecular Self-Repair Protocols</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Three Transhumanist Foundations -->
+        <div class="pillars-row">
+          <div class="pillar-item" data-reveal="fade-up" data-delay="100">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Neural Autonomy</div>
+            <p class="pillar-desc">
+              Your consciousness remains 100% sovereign. Zero cloud telemetry without explicit 
+              cryptographic biometric consent.
+            </p>
+          </div>
+          <div class="pillar-item" data-reveal="fade-up" data-delay="200">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Titanium Resilience</div>
+            <p class="pillar-desc">
+              Carbon-nanotube bone density and synthetic myofibrils engineered to survive 
+              atmospheric reentry pressures.
+            </p>
+          </div>
+          <div class="pillar-item" data-reveal="fade-up" data-delay="300">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">Adaptive Evolution</div>
+            <p class="pillar-desc">
+              Modular bio-docking ports enabling instant firmware updates and 
+              sensor expansion as new quantum paradigms emerge.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section features-section" id="features">
+      <div class="container">
+        
+        <div class="section-header" data-reveal="fade-up">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span> 03 // ARCHITECTURE <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">
+            Augmentation <span class="text-glow-neon">Systems</span>
+          </h2>
+          <p class="section-subtitle">
+            Military-spec precision engineered with biological harmony. Each subsystem 
+            is forged from aerospace silver alloys and optical waveguides.
+          </p>
+        </div>
+
+        <!-- 6 High-Tech Cards with Metallic Gradients and Glowing Icons -->
+        <div class="features-grid">
+          
+          <!-- Feature 1: Neural Link -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="100">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                  <circle cx="12" cy="12" r="4" fill="rgba(0, 240, 255, 0.15)"/>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 01</span>
+            </div>
+            <h3 class="feature-title">Synaptic Neural Core</h3>
+            <p class="feature-desc">
+              Direct-to-cortex graphene electrodes facilitating 100 terabit/second 
+              telepathic data transfers with sub-perceptual latency.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>BANDWIDTH:</span> <strong>120 TB/s</strong></div>
+              <div class="metric"><span>INTEGRATION:</span> <strong class="text-glow-cyan">99.98%</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Nanosteel Skeleton -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="200">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 02</span>
+            </div>
+            <h3 class="feature-title">Nanosteel Skeleton</h3>
+            <p class="feature-desc">
+              Titanium-graphene skeletal matrix woven around biological bone marrow, 
+              delivering 12x kinetic shock absorption and extreme torque.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>TENSILE STRENGTH:</span> <strong>4.8 GPa</strong></div>
+              <div class="metric"><span>MASS RATIO:</span> <strong class="text-glow-cyan">+18% ONLY</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Optical HUD -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="300">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <line x1="12" y1="2" x2="12" y2="5"/>
+                  <line x1="12" y1="19" x2="12" y2="22"/>
+                  <line x1="2" y1="12" x2="5" y2="12"/>
+                  <line x1="19" y1="12" x2="22" y2="12"/>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 03</span>
+            </div>
+            <h3 class="feature-title">Quantum Spectral Optic HUD</h3>
+            <p class="feature-desc">
+              Bionic ocular lenses capable of UV, thermal, and micro-spectral imaging 
+              with instantaneous AI threat detection and ballistic calculation.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>RESOLUTION:</span> <strong>32K OMNI</strong></div>
+              <div class="metric"><span>SPECTRA:</span> <strong class="text-glow-cyan">7 SPECTRUMS</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 4: Sub-Dermal Bioreactor -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="100">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 04</span>
+            </div>
+            <h3 class="feature-title">Sub-Dermal Bioreactor</h3>
+            <p class="feature-desc">
+              Micro-fusion bio-cells that convert kinetic movement and blood glucose into 
+              boundless electrochemical energy, eliminating external charging.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>AUTONOMY:</span> <strong>PERPETUAL</strong></div>
+              <div class="metric"><span>HEAT WASTE:</span> <strong class="text-glow-cyan">&lt; 0.05°C</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 5: Cryo-Adaptive Plating -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="200">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 05</span>
+            </div>
+            <h3 class="feature-title">Cryo-Adaptive Plating</h3>
+            <p class="feature-desc">
+              Thermal-memory synthetic polymer skin with instantaneous molecular re-crosslinking, 
+              healing minor cuts and punctures within 4.2 seconds.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>REPAIR RATE:</span> <strong>4.2 SEC</strong></div>
+              <div class="metric"><span>TEMP RANGE:</span> <strong class="text-glow-cyan">-60°C TO +450°C</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 6: Cryptographic Firewall -->
+          <div class="feature-card tilt-card" data-reveal="fade-up" data-delay="300">
+            <div class="card-glow-edge"></div>
+            <div class="circuit-watermark" aria-hidden="true"></div>
+            <div class="feature-header">
+              <div class="feature-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="glow-svg">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <span class="feature-sys-id">MOD // 06</span>
+            </div>
+            <h3 class="feature-title">Quantum Neural Firewall</h3>
+            <p class="feature-desc">
+              Zero-knowledge lattice-based cryptographic shielding that isolates individual memory 
+              pathways from unauthorized electronic warfare and signal tapping.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric"><span>ENCRYPTION:</span> <strong>LATTICE-8192</strong></div>
+              <div class="metric"><span>INTRUSION:</span> <strong class="text-glow-cyan">0.0000% PROB</strong></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CYBORG MODULAR HUD SECTION -->
+    <section class="section diagnostics-section" id="diagnostics">
+      <div class="container">
+        
+        <div class="section-header" data-reveal="fade-up">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span> 04 // LIVE TELEMETRY <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">
+            Cyborg <span class="text-glow-neon">Modular HUD</span>
+          </h2>
+          <p class="section-subtitle">
+            Configure system operational parameters in real time. Switch profiles to recalibrate 
+            synaptic throughput, kinetic dampers, and thermal dispersal.
+          </p>
+        </div>
+
+        <!-- Interactive Terminal HUD Deck -->
+        <div class="hud-deck" data-reveal="zoom-in" data-delay="150">
+          
+          <!-- HUD Header Toolbar -->
+          <div class="hud-deck-header">
+            <div class="hud-deck-title">
+              <span class="deck-led"></span>
+              <span>OPERATIONAL CONSOLE // CALIBRATION ACTIVE</span>
+            </div>
+            <div class="hud-deck-status">
+              <span>SYNC: <strong id="hud-sync-val">100% SECURE</strong></span>
+              <span class="deck-ver">BUILD: 2088.09.21</span>
+            </div>
+          </div>
+
+          <!-- HUD Body: Controls & Live Readouts -->
+          <div class="hud-deck-body">
+            
+            <!-- Mode Switcher Controls -->
+            <div class="hud-controls-panel">
+              <h3 class="panel-label">SELECT OPERATIONAL PROTOCOL:</h3>
+              <div class="mode-buttons-group">
+                <button class="mode-btn active" data-mode="combat">
+                  <span class="mode-icon">⚔</span>
+                  <span class="mode-info">
+                    <strong>COMBAT OVERDRIVE</strong>
+                    <small>High torque, reinforced kinetic shields</small>
+                  </span>
+                </button>
+                <button class="mode-btn" data-mode="stealth">
+                  <span class="mode-icon">👁</span>
+                  <span class="mode-info">
+                    <strong>STEALTH RECON</strong>
+                    <small>Silent acoustics, infrared shielding</small>
+                  </span>
+                </button>
+                <button class="mode-btn" data-mode="analysis">
+                  <span class="mode-icon">⚡</span>
+                  <span class="mode-info">
+                    <strong>QUANTUM ANALYSIS</strong>
+                    <small>Overclocked neural bus, predictive mapping</small>
+                  </span>
+                </button>
+                <button class="mode-btn" data-mode="harmony">
+                  <span class="mode-icon">☯</span>
+                  <span class="mode-info">
+                    <strong>SYNAPTIC HARMONY</strong>
+                    <small>Balanced bio-state, maximum longevity</small>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live HUD Diagnostics Display -->
+            <div class="hud-telemetry-panel">
+              
+              <div class="telemetry-gauge-card">
+                <div class="gauge-top">
+                  <span class="gauge-name">POWER FLUX CORE</span>
+                  <span class="gauge-val" id="val-power">98.4 %</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill" id="bar-power" style="width: 98%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-gauge-card">
+                <div class="gauge-top">
+                  <span class="gauge-name">SYNAPTIC SYNCHRONY</span>
+                  <span class="gauge-val" id="val-synapse">99.8 %</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill fill-cyan" id="bar-synapse" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-gauge-card">
+                <div class="gauge-top">
+                  <span class="gauge-name">KINETIC TORQUE DAMPERS</span>
+                  <span class="gauge-val" id="val-torque">84.2 %</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill fill-silver" id="bar-torque" style="width: 84%;"></div>
+                </div>
+              </div>
+
+              <div class="telemetry-gauge-card">
+                <div class="gauge-top">
+                  <span class="gauge-name">HEAT DISSIPATION</span>
+                  <span class="gauge-val" id="val-heat">36.8 °C</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill fill-heat" id="bar-heat" style="width: 37%;"></div>
+                </div>
+              </div>
+
+              <!-- Terminal Status Stream -->
+              <div class="hud-terminal-stream">
+                <div class="stream-line"><span class="t-stamp">[13:15:02]</span> <span class="t-ok">OK:</span> Neural bus linked to motor cortex.</div>
+                <div class="stream-line"><span class="t-stamp">[13:15:05]</span> <span class="t-info">SYS:</span> Power routing verified across 48 micro-fusion nodes.</div>
+                <div class="stream-line" id="dynamic-log-line"><span class="t-stamp">[13:15:09]</span> <span class="t-cyan">ACTIVE:</span> Profile [COMBAT OVERDRIVE] locked.</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT / NEURAL UPLINK SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="section-header" data-reveal="fade-up">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span> 05 // TRANSMISSION <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">
+            Neural <span class="text-glow-neon">Uplink</span>
+          </h2>
+          <p class="section-subtitle">
+            Open an encrypted channel to the Cybernetics Engineering Command. 
+            Initiate your consultation for bespoke cybernetic integration.
+          </p>
+        </div>
+
+        <div class="contact-wrapper" data-reveal="fade-up" data-delay="150">
+          
+          <!-- Terminal Sidebar Info -->
+          <div class="contact-info-panel">
+            <div class="info-hologram-seal">
+              <svg viewBox="0 0 100 100" class="rotating-seal" fill="none">
+                <circle cx="50" cy="50" r="45" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <circle cx="50" cy="50" r="35" stroke="#94a3b8" stroke-width="1"/>
+                <polygon points="50,20 75,65 25,65" stroke="#00f0ff" stroke-width="1.5"/>
+                <circle cx="50" cy="50" r="6" fill="#00f0ff"/>
+              </svg>
+            </div>
+            
+            <h3 class="panel-subtitle">DIRECT FREQUENCIES</h3>
+            <div class="info-items">
+              <div class="info-item">
+                <span class="item-label">ORBITAL RELAY:</span>
+                <span class="item-val">STATION OMEGA-7 // FREQ: 1420.405 MHz</span>
+              </div>
+              <div class="info-item">
+                <span class="item-label">QUANTUM PGP:</span>
+                <span class="item-val">0x88F9...E42C (VERIFIED)</span>
+              </div>
+              <div class="info-item">
+                <span class="item-label">SEC LEVEL:</span>
+                <span class="item-val text-glow-cyan">CLEARANCE CLASS-IV REQUIRED</span>
+              </div>
+              <div class="info-item">
+                <span class="item-label">LAB COORDINATES:</span>
+                <span class="item-val">37.7749° N, 122.4194° W (SECTOR 04)</span>
+              </div>
+            </div>
+
+            <div class="security-guarantee">
+              <div class="shield-badge">🔒 100% NEURAL ISOLATION</div>
+              <p>Transmission packets are encrypted at the biometric hardware layer before leaving your local terminal.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Uplink Form -->
+          <div class="contact-form-panel">
+            <form id="neural-uplink-form" class="cyber-form" novalidate>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="caller-name" class="cyber-label">
+                    <span>OPERATIVE IDENTIFIER</span>
+                    <span class="label-req">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="text" id="caller-name" name="name" class="cyber-input" placeholder="e.g., Alex Mercer // Unit 7" required>
+                    <span class="input-glow"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="caller-email" class="cyber-label">
+                    <span>NEURAL COMMS FREQUENCY (EMAIL)</span>
+                    <span class="label-req">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="email" id="caller-email" name="email" class="cyber-input" placeholder="operative@sector7.org" required>
+                    <span class="input-glow"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="augmentation-type" class="cyber-label">
+                  <span>DESIRED AUGMENTATION ARCHITECTURE</span>
+                </label>
+                <div class="input-wrapper">
+                  <select id="augmentation-type" name="type" class="cyber-input cyber-select">
+                    <option value="neural-core">Synaptic Neural Interface (Cortex Core)</option>
+                    <option value="nanosteel-exo">Nanosteel Bionic Skeletal Matrix</option>
+                    <option value="optical-hud">Quantum Spectral Ocular Lenses</option>
+                    <option value="cryo-dermal">Cryo-Adaptive Dermal Plating</option>
+                    <option value="full-overhaul">Full Transhumanist Bio-Mechanical Overhaul</option>
+                  </select>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="transmission-packet" class="cyber-label">
+                  <span>ENCRYPTED TRANSMISSION PACKET</span>
+                  <span class="label-req">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <textarea id="transmission-packet" name="message" class="cyber-input cyber-textarea" rows="4" placeholder="Enter specifications, physiological baseline, or inquiries for the Cybernetic Directorate..." required></textarea>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <!-- Form Action Button -->
+              <div class="form-actions">
+                <button type="submit" class="btn-neon-cta btn-submit" id="submit-uplink-btn">
+                  <span class="btn-glow-layer"></span>
+                  <span class="btn-content">
+                    <span class="btn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                    </span>
+                    <span class="btn-text">TRANSMIT UPLINK</span>
+                    <span class="btn-reticle"></span>
+                  </span>
+                </button>
+              </div>
+
+              <!-- Live Submission Feedback Terminal -->
+              <div id="form-terminal-output" class="form-terminal-box" aria-live="polite"></div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="cyber-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-symbol mini">
+            <svg viewBox="0 0 40 40" fill="none">
+              <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#00f0ff" stroke-width="2" fill="rgba(0,240,255,0.1)"/>
+              <circle cx="20" cy="20" r="4" fill="#00f0ff"/>
+            </svg>
+          </div>
+          <span class="logo-title">CYBORG</span>
+        </div>
+        <p class="footer-tagline">
+          Synthesizing biological consciousness with infinite cybernetic potential since 2088.
+        </p>
+        <div class="footer-compliance">
+          <span class="compliance-badge">VERIFIED // GLOBAL CYBERNETICS ACCORD 2088</span>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul>
+            <li><a href="#hero">System Init</a></li>
+            <li><a href="#about">The Synthesis</a></li>
+            <li><a href="#features">Augmentation Suite</a></li>
+            <li><a href="#diagnostics">Modular HUD</a></li>
+            <li><a href="#contact">Neural Uplink</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">PROTOCOLS</h4>
+          <ul>
+            <li><a href="#features">Neural Link V4.9</a></li>
+            <li><a href="#features">Titanium Nano-Skeleton</a></li>
+            <li><a href="#features">Quantum Optics</a></li>
+            <li><a href="#features">Zero-Trust Firewall</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">SECTOR FREQUENCIES</h4>
+          <div class="social-matrix">
+            <a href="#" class="social-chip" aria-label="Matrix Channel"><span>MATRIX // 01</span></a>
+            <a href="#" class="social-chip" aria-label="GitHub Neural Repo"><span>GIT // REPO</span></a>
+            <a href="#" class="social-chip" aria-label="Orbital Discord Relay"><span>RELAY // DISCORD</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p class="copyright">© 2088 CYBORG ENTERPRISES. ALL SYNAPTIC RIGHTS RESERVED.</p>
+        <div class="footer-legal">
+          <a href="#">ETHICAL BIONICS CHARTER</a>
+          <span class="sep">//</span>
+          <a href="#">NEURAL PRIVACY POLICY</a>
+          <span class="sep">//</span>
+          <a href="#">FIRMWARE INTEGRITY</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Reticle Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Return to System Top" title="Scroll to Top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

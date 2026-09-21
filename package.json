@@ -1,0 +1,19 @@
+{
+  "name": "cyborg-landing-page",
+  "version": "1.0.0",
+  "description": "Futuristic cyborg-themed landing page blending technology and humanity.",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "cyborg",
+    "futuristic",
+    "landing-page",
+    "web-audio",
+    "canvas-animation",
+    "hologram"
+  ],
+  "author": "Cyborg 2088",
+  "license": "MIT"
+}
